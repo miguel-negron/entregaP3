@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragmentos/head::head}">
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-inverse" th:fragment="barra_navegacion">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Entrega P2</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a th:href="@{/}">Pagina principal</a></li>
+				<li><a th:href="@{/formulario}">Formulario</a></li>
+				<li><a th:href="@{/CGC}">Calculador de grasa corporal</a></li>
+			</ul>
+		</div>
+	</nav>
+
+</body>
+
+</html>
