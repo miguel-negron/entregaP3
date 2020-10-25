@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="~{fragmentos/imports::head}"></head>
+	
+	<body>
+	
+		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
+	
+		
+		<nav aria-label="..." th:fragment="paginador(paginas)">
+		<ul class="pagination pagination-lg d-flex justify-content-center">
+			<li class="page-item" th:each="pagina : ${#numbers.sequence(1,paginas)}"><a class="page-link" th:href="@{/}" th:text="${pagina}">1</a></li>
+		</ul>
+	</nav>
+		
+		<footer th:replace="~{fragmentos/pie::pie}"></footer>
+		<div th:replace="~{fragmentos/imports::pie}"></div>
+	</body>
+
+</html>
