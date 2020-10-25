@@ -9,17 +9,18 @@
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 
 	<nav th:replace="~{fragmentos/paginador::paginador(7)}"></nav>
-	
+
+
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1 >Index</h1>
+			<h1>Index</h1>
 
 			<br> <a th:href="@{/formulario}">Formulario</a> <br> <a
 				th:href="@{/CGC}">Calculador de grasa corporal</a>
 		</div>
 	</div>
 
-<!-- 	<footer th:replace="~{fragmentos/pie::pie}"></footer> -->
+	<!-- 	<footer th:replace="~{fragmentos/pie::pie}"></footer> -->
 
 	<div th:replace="~{fragmentos/imports::pie}"></div>
 </body>
