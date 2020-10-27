@@ -58,7 +58,7 @@ public class ControladorIndex {
 
 		respuestas.add(msg);
 		request.getSession().setAttribute("RESPUESTAS", respuestas);
-		return "redirect:/session";
+		return "juego";
 	}
 
 	@PostMapping("/destroy")

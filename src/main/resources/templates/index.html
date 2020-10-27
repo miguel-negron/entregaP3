@@ -8,18 +8,51 @@
 
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 
-	<nav th:replace="~{fragmentos/paginador::paginador(7)}"></nav>
+<!-- 	<nav th:replace="~{fragmentos/paginador::paginador(7)}"></nav> -->
 
 
-	<div class="row">
-		<div class="col-md-12 text-center">
-			<h1>Index</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="display-1 text-center">¿Cuanto sabes sobre la flora de la
+					Sierra de Guadarrama?</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="jumbotron">
+					<form th:action="@{/jugar}" method="post" class="form-horizontal">
+						<fieldset>
 
-			<br> <a th:href="@{/formulario}">Formulario</a> <br> <a
-				th:href="@{/CGC}">Calculador de grasa corporal</a>
+							<!-- Form Name -->
+							<legend>Empezar partida</legend>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="nombre">Nombre</label>
+								<div class="col-md-4">
+									<input id="nombre" name="nombre" type="text" placeholder=""
+										class="form-control input-md" required="">
+
+								</div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="submit"></label>
+								<div class="col-md-4">
+									<button id="submit" name="submit" class="btn btn-primary">Empezar</button>
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+			<div class="col-md-6"></div>
 		</div>
 	</div>
-
 	<!-- 	<footer th:replace="~{fragmentos/pie::pie}"></footer> -->
 
 	<div th:replace="~{fragmentos/imports::pie}"></div>
