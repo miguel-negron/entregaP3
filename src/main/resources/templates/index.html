@@ -14,8 +14,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="display-1 text-center">¿Cuanto sabes sobre la flora de la
-					Sierra de Guadarrama?</h1>
+				<h1 class="display-4 text-center">¡Haz una tostada y te diremos que tipo de amigo eres!</h1>
 			</div>
 		</div>
 		<div class="row">
@@ -50,7 +49,11 @@
 
 				</div>
 			</div>
-			<div class="col-md-6"></div>
+			<div class="col-md-6">
+				
+				<div th:each="res : ${sessionRespuestas}" th:text="${res}"></div>
+			
+			</div>
 		</div>
 	</div>
 	<!-- 	<footer th:replace="~{fragmentos/pie::pie}"></footer> -->
