@@ -19,8 +19,12 @@ public class SpringQuizMiguelNegronApplication {
 	CommandLineRunner initData(PuntuacionRepository repositorio) {
 	    return (args) -> {
 	        Puntuacion p = new Puntuacion( "Miguel", "El mejor");
+	        Puntuacion p3 = new Puntuacion( "Pablo", "Meh");
+	        Puntuacion p2 = new Puntuacion( "Javi", "Majete");
 	        
 	        repositorio.save(p);
+	        repositorio.save(p3);
+	        repositorio.save(p2);
 	        
 	    };
 	}

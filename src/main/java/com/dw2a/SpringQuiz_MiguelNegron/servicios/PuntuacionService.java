@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.dw2a.SpringQuiz_MiguelNegron.entidades.Puntuacion;
 
-
 public interface PuntuacionService {
 	public Puntuacion add(Puntuacion e);
 

@@ -8,13 +8,14 @@
 
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 
-<!-- 	<nav th:replace="~{fragmentos/paginador::paginador(7)}"></nav> -->
+	<!-- 	<nav th:replace="~{fragmentos/paginador::paginador(7)}"></nav> -->
 
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="display-4 text-center">¡Haz una tostada y te diremos que tipo de amigo eres!</h1>
+				<h1 class="display-4 text-center">¡Haz una tostada y te diremos
+					que tipo de amigo eres!</h1>
 			</div>
 		</div>
 		<div class="row">
@@ -50,9 +51,21 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				
-				<div th:each="p : ${puntuaciones}" th:text="${p.nombre + '  ' + p.puntuacion}"></div>
-			
+
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Clasificacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="p : ${puntuaciones}">
+							<td th:text="${p.nombre}">Nombre</td>
+							<td th:text="${p.puntuacion}">Puntuacion</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

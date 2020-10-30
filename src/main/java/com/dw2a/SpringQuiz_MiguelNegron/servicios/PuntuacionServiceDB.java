@@ -3,10 +3,12 @@ package com.dw2a.SpringQuiz_MiguelNegron.servicios;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.dw2a.SpringQuiz_MiguelNegron.entidades.Puntuacion;
 import com.dw2a.SpringQuiz_MiguelNegron.repositories.PuntuacionRepository;
 
+@Service
 public class PuntuacionServiceDB implements PuntuacionService {
 
 	@Autowired
