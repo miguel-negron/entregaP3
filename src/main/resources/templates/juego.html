@@ -13,18 +13,16 @@
 		<h1 th:text="${sessionRespuestas[0]}">nombre</h1>
 
 
-		<form th:action="@{/siguientePregunta}" method="post" class="form-horizontal">
+		<form th:action="${#arrays.length(sessionRespuestas) < 7} ? @{/siguientePregunta} : @{/fin}" method="post" class="form-horizontal">
 			<div th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }">
 				<input id="respuesta" name="respuesta" type="text" placeholder=""
 					class="form-control input-md">
 			</div>
 
-			<button th:if="${#arrays.length(sessionRespuestas) >= 2}" type="submit" id="submit" name="submit"
+			<button th:if="${#arrays.length(sessionRespuestas)} != 1 AND ${#arrays.length(sessionRespuestas)} != 4" type="submit" id="submit" name="submit"
 				class="btn btn-primary">Enviar</button>
 		</form>
-		<!-- 		<div -->
-		<!-- 			th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }"> -->
-		<!-- 			${#strings.concat(pregunta, ${#arrays.length(sessionRespuestas)})}</div> -->
+
 	</div>
 
 

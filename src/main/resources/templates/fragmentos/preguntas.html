@@ -33,7 +33,7 @@
 	<div th:fragment="pregunta2">
 		<div class="custom-control custom-radio">
 			<input class="custom-control-input" type="radio" name="respuesta"
-				id="respuesta-0" value="0"> <label
+				id="respuesta-0" value="0" checked> <label
 				class="custom-control-label" for="respuesta-0">Sin tostar</label>
 		</div>
 		<div class="custom-control custom-radio">
@@ -56,7 +56,7 @@
 		</div>
 	</div>
 	<div th:fragment="pregunta3">
-		<select id="respuesta" name="respuesta">
+		<select id="respuesta" name="respuesta" required>
 			<option value="0">Aceite</option>
 			<option value="1">Mantequilla</option>
 			<option value="2">Margarina</option>
@@ -88,7 +88,7 @@
 	<div th:fragment="pregunta5">
 		<div class="custom-control custom-radio">
 			<input class="custom-control-input" type="radio" name="respuesta"
-				id="respuesta-0" value="0"> <label
+				id="respuesta-0" value="0" checked> <label
 				class="custom-control-label" for="respuesta-0">Salmón</label>
 		</div>
 		<div class="custom-control custom-radio">
@@ -109,7 +109,7 @@
 		</div>
 	</div>
 	<div th:fragment="pregunta6">
-		<select id="respuesta" name="respuesta">
+		<select id="respuesta" name="respuesta" required>
 			<option value="0">Azucar</option>
 			<option value="1">Sal y/o pimienta</option>
 			<option value="2">Especias raras</option>
@@ -126,9 +126,8 @@
 		</div>
 		<div class="checkbox">
 			<label for="respuesta-1"> <input type="checkbox"
-				name="respuesta" id="respuesta-1" value="1">¿Habrá un test
-				de Buzzfeed que relacione hacer una tostada con la personalidad?
-				Seguro que si, esa gente se aburre demasiado
+				name="respuesta" id="respuesta-1" value="1">Que tostada mas
+				rica, ¿Me habrá salido así de bien por mi personalidad?
 			</label>
 		</div>
 		<div class="checkbox">
