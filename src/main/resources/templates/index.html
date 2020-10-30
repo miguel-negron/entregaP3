@@ -20,7 +20,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="jumbotron">
-					<form th:action="@{/jugar}" method="post" class="form-horizontal">
+					<form th:action="@{/empezar}" method="post" class="form-horizontal">
 						<fieldset>
 
 							<!-- Form Name -->
@@ -51,7 +51,7 @@
 			</div>
 			<div class="col-md-6">
 				
-				<div th:each="res : ${sessionRespuestas}" th:text="${res}"></div>
+				<div th:each="p : ${puntuaciones}" th:text="${p.nombre + '  ' + p.puntuacion}"></div>
 			
 			</div>
 		</div>

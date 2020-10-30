@@ -8,11 +8,10 @@
 		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 	
 		
-		<nav aria-label="..." th:fragment="paginador(paginas)">
-		<ul class="pagination pagination-lg d-flex justify-content-center">
-			<li class="page-item" th:each="pagina : ${#numbers.sequence(1,paginas)}"><a class="page-link" th:href="@{/}" th:text="${pagina}">1</a></li>
+		
+		<ul class="pagination pagination-lg d-flex justify-content-center my-5" th:fragment="paginador(paginas)">
+			<li class="page-item" th:each="pagina : ${#numbers.sequence(1,paginas)}"><a class="page-link" th:href="@{/}" th:text="${pagina}">num</a></li>
 		</ul>
-	</nav>
 		
 		<footer th:replace="~{fragmentos/pie::pie}"></footer>
 		<div th:replace="~{fragmentos/imports::pie}"></div>

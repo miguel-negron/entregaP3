@@ -1,36 +1,152 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
 
-	<head th:replace="~{fragmentos/imports::head}"></head>
-	
-	<body>
-	
-		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	
-		
-		<div th:fragment="pregunta1">
-		hola
+<head th:replace="~{fragmentos/imports::head}"></head>
+
+<body>
+
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
+
+
+	<div th:fragment="pregunta1">
+		<div class="row">
+			<div class="col-6 m-auto">
+				<button type="submit" name="respuesta" value="0"
+					class="btn btn-info btn-lg m-5 p-5">Pan bimbo</button>
+			</div>
+			<div class="col-6">
+				<button type="submit" name="respuesta" value="1"
+					class="btn btn-info btn-lg">Chapata</button>
+			</div>
 		</div>
-		<div th:fragment="pregunta2">
-		adios
+		<div class="row">
+			<div class="col-6">
+				<button type="submit" name="respuesta" value="2"
+					class="btn btn-info btn-lg">Pan de semillas</button>
+			</div>
+			<div class="col-6">
+				<button type="submit" name="respuesta" value="3"
+					class="btn btn-info btn-lg">Baguette</button>
+			</div>
 		</div>
-		<div th:fragment="pregunta3">
-		adios3
+	</div>
+	<div th:fragment="pregunta2">
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-0" value="0"> <label
+				class="custom-control-label" for="respuesta-0">Sin tostar</label>
 		</div>
-		<div th:fragment="pregunta4">
-		adios4
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-1" value="1"><label
+				class="custom-control-label" for="respuesta-1">Ligeramente
+				tostada </label>
 		</div>
-		<div th:fragment="pregunta5">
-		adios5
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-2" value="2"><label
+				class="custom-control-label" for="respuesta-2">Bien doradita
+			</label>
 		</div>
-		<div th:fragment="pregunta6">
-		adios6
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-3" value="3"><label
+				class="custom-control-label" for="respuesta-3">Casi quemada
+				pero todavía se puede comer </label>
 		</div>
-		<div th:fragment="pregunta7">
-		adios7
+	</div>
+	<div th:fragment="pregunta3">
+		<select id="respuesta" name="respuesta">
+			<option value="0">Aceite</option>
+			<option value="1">Mantequilla</option>
+			<option value="2">Margarina</option>
+			<option value="3">Nada de esto, gracias</option>
+		</select>
+	</div>
+	<div th:fragment="pregunta4">
+		<div class="row">
+			<div class="col-6 m-auto">
+				<button type="submit" name="respuesta" value="0"
+					class="btn btn-info btn-lg m-5 p-5">Mermelada</button>
+			</div>
+			<div class="col-6">
+				<button type="submit" name="respuesta" value="1"
+					class="btn btn-info btn-lg">Tomatillo</button>
+			</div>
 		</div>
-		
-		<div th:replace="~{fragmentos/imports::pie}"></div>
-	</body>
+		<div class="row">
+			<div class="col-6">
+				<button type="submit" name="respuesta" value="2"
+					class="btn btn-info btn-lg">Mantequilla de cacahuete</button>
+			</div>
+			<div class="col-6">
+				<button type="submit" name="respuesta" value="3"
+					class="btn btn-info btn-lg">Nah, paso</button>
+			</div>
+		</div>
+	</div>
+	<div th:fragment="pregunta5">
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-0" value="0"> <label
+				class="custom-control-label" for="respuesta-0">Salmón</label>
+		</div>
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-1" value="1"><label
+				class="custom-control-label" for="respuesta-1">Jamón serrano</label>
+		</div>
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-2" value="2"><label
+				class="custom-control-label" for="respuesta-2">Aguacate</label>
+		</div>
+		<div class="custom-control custom-radio">
+			<input class="custom-control-input" type="radio" name="respuesta"
+				id="respuesta-3" value="3"><label
+				class="custom-control-label" for="respuesta-3">No tengo
+				tanto hambre</label>
+		</div>
+	</div>
+	<div th:fragment="pregunta6">
+		<select id="respuesta" name="respuesta">
+			<option value="0">Azucar</option>
+			<option value="1">Sal y/o pimienta</option>
+			<option value="2">Especias raras</option>
+			<option value="3">Mmm, voy bien con lo que tengo</option>
+		</select>
+	</div>
+	<div th:fragment="pregunta7">
+		<div class="checkbox">
+			<label for="respuesta-0"> <input type="checkbox"
+				name="respuesta" id="respuesta-0" value="0" checked>A ver
+				que quizzes más originales me entregan mis maravillosos alumnos el
+				viernes
+			</label>
+		</div>
+		<div class="checkbox">
+			<label for="respuesta-1"> <input type="checkbox"
+				name="respuesta" id="respuesta-1" value="1">¿Habrá un test
+				de Buzzfeed que relacione hacer una tostada con la personalidad?
+				Seguro que si, esa gente se aburre demasiado
+			</label>
+		</div>
+		<div class="checkbox">
+			<label for="respuesta-2"> <input type="checkbox"
+				name="respuesta" id="respuesta-2" value="2">¿Hoy empezaba a
+				y diez o a y cuarto?
+			</label>
+		</div>
+		<div class="checkbox">
+			<label for="respuesta-3"> <input type="checkbox"
+				name="respuesta" id="respuesta-3" value="3">¿Habrá alguna
+				manera de meter checkboxes en un test de personalidad sin liarla
+				mucho?
+			</label>
+		</div>
+	</div>
+
+	<div th:replace="~{fragmentos/imports::pie}"></div>
+</body>
 
 </html>

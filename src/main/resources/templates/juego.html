@@ -6,14 +6,26 @@
 <body>
 
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	<nav th:replace="~{fragmentos/paginador::paginador(7)}"></nav>
+	<ul th:replace="~{fragmentos/paginador::paginador(7)}"></ul>
 
-	<h1 th:text="${sessionRespuestas[0]}">nombre</h1>
+	<div class="jumbotron">
 
-	<div
-		th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }">${#strings.concat(pregunta,
-		${#arrays.length(sessionRespuestas)})}</div>
+		<h1 th:text="${sessionRespuestas[0]}">nombre</h1>
 
+
+		<form th:action="@{/siguientePregunta}" method="post" class="form-horizontal">
+			<div th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }">
+				<input id="respuesta" name="respuesta" type="text" placeholder=""
+					class="form-control input-md">
+			</div>
+
+			<button th:if="${#arrays.length(sessionRespuestas) >= 2}" type="submit" id="submit" name="submit"
+				class="btn btn-primary">Enviar</button>
+		</form>
+		<!-- 		<div -->
+		<!-- 			th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }"> -->
+		<!-- 			${#strings.concat(pregunta, ${#arrays.length(sessionRespuestas)})}</div> -->
+	</div>
 
 
 	<div th:replace="~{fragmentos/imports::pie}"></div>
