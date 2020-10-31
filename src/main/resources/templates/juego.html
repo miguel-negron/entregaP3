@@ -6,24 +6,50 @@
 <body>
 
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	<ul th:replace="~{fragmentos/paginador::paginador(7)}"></ul>
-
-	<div class="jumbotron">
-
-		<h1 th:text="${sessionRespuestas[0]}">nombre</h1>
 
 
-		<form th:action="${#arrays.length(sessionRespuestas) < 7} ? @{/siguientePregunta} : @{/fin}" method="post" class="form-horizontal">
-			<div th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }">
-				<input id="respuesta" name="respuesta" type="text" placeholder=""
-					class="form-control input-md">
-			</div>
 
-			<button th:if="${#arrays.length(sessionRespuestas)} != 1 AND ${#arrays.length(sessionRespuestas)} != 4" type="submit" id="submit" name="submit"
-				class="btn btn-primary">Enviar</button>
-		</form>
+	<div class="row">
+		<div class="col-4 d-flex justify-content-center my-5">
+			<h1 th:text="${sessionRespuestas[0]}">nombre</h1>
+		</div>
+		<div class="col-8">
+			<ul th:replace="~{fragmentos/paginador::paginador(7)}"></ul>
+		</div>
 
 	</div>
+
+	<div class="row">
+		<div class="col-6">
+			<div class="jumbotron">
+				<form
+					th:action="${#arrays.length(sessionRespuestas) < 7} ? @{/siguientePregunta} : @{/fin}"
+					method="post" class="form-horizontal">
+					<div
+						th:replace="~{fragmentos/preguntas :: ${#strings.concat('pregunta', #arrays.length(sessionRespuestas))} }">
+						<input id="respuesta" name="respuesta" type="text" placeholder=""
+							class="form-control input-md">
+					</div>
+
+					<button
+						th:if="${#arrays.length(sessionRespuestas)} != 1 AND ${#arrays.length(sessionRespuestas)} != 4"
+						type="submit" id="submit" name="submit" class="btn btn-primary">Enviar</button>
+				</form>
+
+			</div>
+		</div>
+		<div class="col-6">
+			<img th:if="${#arrays.length(sessionRespuestas)} lt 7"
+				th:src="@{${#strings.concat(#strings.concat('/images/img', #arrays.length(sessionRespuestas)))} + '.jpg'}"
+				alt="..." class="img-thumbnail w-75"> 
+			<img
+				th:unless="${#arrays.length(sessionRespuestas)} < 7"
+				th:src="@{${#strings.concat(#strings.concat('/images/img', #arrays.length(sessionRespuestas)))} + '.gif'}"
+				alt="..." class="img-thumbnail w-75">
+
+		</div>
+	</div>
+
 
 
 	<div th:replace="~{fragmentos/imports::pie}"></div>

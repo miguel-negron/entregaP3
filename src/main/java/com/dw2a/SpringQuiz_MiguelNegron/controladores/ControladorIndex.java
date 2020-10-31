@@ -22,7 +22,7 @@ public class ControladorIndex {
 	@Autowired
 	PuntuacionServiceDB puntuacionService;
 
-	String[] tiposDeAmigo = { "Majo", "Maternal", "Emo", "Gracioso" };
+	String[] tiposDeAmigo = { "Amigo agradable", "Amigo maternal", "Amigo emo", "Amigo gracioso" };
 
 	@GetMapping("/")
 	public String index(Model model, HttpSession session) {
