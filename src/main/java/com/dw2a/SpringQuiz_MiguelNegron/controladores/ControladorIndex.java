@@ -22,7 +22,7 @@ public class ControladorIndex {
 	@Autowired
 	PuntuacionServiceDB puntuacionService;
 
-	String[] tiposDeAmigo = { "Amigo agradable", "Amigo maternal", "Amigo emo", "Amigo gracioso" };
+	String[] tiposDeAmigo = {"Amigo fiestero", "Amigo listo", "Amigo gracioso", "Amigo soso" };
 
 	@GetMapping("/")
 	public String index(Model model, HttpSession session) {
@@ -91,7 +91,7 @@ public class ControladorIndex {
 	}
 
 	@PostMapping("/fin")
-	public String finalizarQuiz(@RequestParam(value = "respuesta", required = false) List<String> respuesta, HttpServletRequest request) {
+	public String finalizarQuiz(@RequestParam(value = "respuesta", required = false) List<String> respuesta, HttpServletRequest request, Model modelo) {
 		@SuppressWarnings("unchecked")
 		List<String> respuestas = (List<String>) request.getSession().getAttribute("RESPUESTAS");
 
@@ -100,13 +100,18 @@ public class ControladorIndex {
 			request.getSession().setAttribute("RESPUESTAS", respuestas);
 		}
 		
-		for (String s : respuesta) {
-			respuestas.add(s);
+		if(respuesta != null) {
+			for (String s : respuesta) {
+				respuestas.add(s);
+			}
 		}
 		
 		Puntuacion p = new Puntuacion(respuestas.get(0), tiposDeAmigo[deduceTipo(respuestas)]);
 		puntuacionService.add(p);
 
+		modelo.addAttribute("categoriaFinal", tiposDeAmigo[deduceTipo(respuestas)]);
+		modelo.addAttribute("categoriaFinalNum", deduceTipo(respuestas));
+		
 		request.getSession().invalidate();
 		return "fin";
 

@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
 
-	<head th:replace="~{fragmentos/imports::head}"></head>
-	
-	<body>
-	
-		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	
-		
-		
-		
-		<div th:replace="~{fragmentos/imports::pie}"></div>
-	</body>
+<head th:replace="~{fragmentos/imports::head}"></head>
+
+<body>
+
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
+
+	<div class="text-center">
+		<h1 class="display-3 my-5" th:text="${categoriaFinal}"></h1>
+
+		<img th:src="@{'/images/amigo' + ${categoriaFinalNum} + '.jpg'}"
+			alt="..." class="img-thumbnail w-50">
+	</div>
+
+	<div th:replace="~{fragmentos/imports::pie}"></div>
+</body>
 
 </html>
