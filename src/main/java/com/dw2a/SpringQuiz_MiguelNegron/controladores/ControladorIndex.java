@@ -40,6 +40,9 @@ public class ControladorIndex {
 
 		model.addAttribute("sessionRespuestas", respuestas);
 		model.addAttribute("puntuaciones", puntuaciones);
+		
+		session.invalidate();
+		
 		return "index";
 	}
 
@@ -88,13 +91,17 @@ public class ControladorIndex {
 	}
 
 	@PostMapping("/fin")
-	public String finalizarQuiz(@RequestParam("respuesta") List respuesta, HttpServletRequest request) {
+	public String finalizarQuiz(@RequestParam(value = "respuesta", required = false) List<String> respuesta, HttpServletRequest request) {
 		@SuppressWarnings("unchecked")
 		List<String> respuestas = (List<String>) request.getSession().getAttribute("RESPUESTAS");
 
 		if (respuestas == null) {
 			respuestas = new ArrayList<>();
 			request.getSession().setAttribute("RESPUESTAS", respuestas);
+		}
+		
+		for (String s : respuesta) {
+			respuestas.add(s);
 		}
 		
 		Puntuacion p = new Puntuacion(respuestas.get(0), tiposDeAmigo[deduceTipo(respuestas)]);

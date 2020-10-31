@@ -22,7 +22,8 @@
 		<div class="row">
 			<div class="col-6">
 				<button type="submit" name="respuesta" value="2"
-					class="btn btn-info btn-lg btn-block m-3 p-4">Pan de semillas</button>
+					class="btn btn-info btn-lg btn-block m-3 p-4">Pan de
+					semillas</button>
 			</div>
 			<div class="col-6">
 				<button type="submit" name="respuesta" value="3"
@@ -30,7 +31,7 @@
 			</div>
 		</div>
 	</div>
-	<div th:fragment="pregunta2">
+	<div th:fragment="pregunta2" class="text-left">
 		<div class="custom-control custom-radio">
 			<input class="custom-control-input" type="radio" name="respuesta"
 				id="respuesta-0" value="0" checked> <label
@@ -56,7 +57,7 @@
 		</div>
 	</div>
 	<div th:fragment="pregunta3">
-		<select id="respuesta" name="respuesta" required>
+		<select class="custom-select custom-select-lg mb-3" id="respuesta" name="respuesta" required>
 			<option value="0">Aceite</option>
 			<option value="1">Mantequilla</option>
 			<option value="2">Margarina</option>
@@ -77,7 +78,8 @@
 		<div class="row">
 			<div class="col-6">
 				<button type="submit" name="respuesta" value="2"
-					class="btn btn-info btn-lg btn-block m-3 p-4">Mantequilla de cacahuete</button>
+					class="btn btn-info btn-lg btn-block m-3 p-4">Mantequilla
+					de cacahuete</button>
 			</div>
 			<div class="col-6">
 				<button type="submit" name="respuesta" value="3"
@@ -85,7 +87,7 @@
 			</div>
 		</div>
 	</div>
-	<div th:fragment="pregunta5">
+	<div th:fragment="pregunta5" class="text-left">
 		<div class="custom-control custom-radio">
 			<input class="custom-control-input" type="radio" name="respuesta"
 				id="respuesta-0" value="0" checked> <label
@@ -109,39 +111,37 @@
 		</div>
 	</div>
 	<div th:fragment="pregunta6">
-		<select id="respuesta" name="respuesta" required>
+		<select class="custom-select custom-select-lg mb-3" id="respuesta" name="respuesta" required>
 			<option value="0">Azucar</option>
 			<option value="1">Sal y/o pimienta</option>
 			<option value="2">Especias raras</option>
 			<option value="3">Mmm, voy bien con lo que tengo</option>
 		</select>
 	</div>
-	<div th:fragment="pregunta7">
-		<div class="checkbox">
-			<label for="respuesta-0"> <input type="checkbox"
-				name="respuesta" id="respuesta-0" value="0" checked>A ver
-				que quizzes más originales me entregan mis maravillosos alumnos el
-				viernes
-			</label>
+	<div th:fragment="pregunta7" class="text-left">
+		<div class="custom-control custom-checkbox">
+			<input class="custom-control-input" type="checkbox" name="respuesta"
+				id="respuesta-0" value="0"><label
+				class="custom-control-label" for="respuesta-0"> A ver que
+				quizzes más originales me entregan mis maravillosos alumnos el
+				viernes </label>
 		</div>
-		<div class="checkbox">
-			<label for="respuesta-1"> <input type="checkbox"
-				name="respuesta" id="respuesta-1" value="1">Que tostada mas
-				rica, ¿Me habrá salido así de bien por mi personalidad?
-			</label>
+		<div class="custom-control custom-checkbox">
+			<input class="custom-control-input" type="checkbox" name="respuesta"
+				id="respuesta-1" value="1"><label class="custom-control-label" for="respuesta-1">
+				Que tostada mas rica, ¿Me habrá salido así de bien por mi
+				personalidad? </label>
 		</div>
-		<div class="checkbox">
-			<label for="respuesta-2"> <input type="checkbox"
-				name="respuesta" id="respuesta-2" value="2">¿Hoy empezaba a
-				y diez o a y cuarto?
-			</label>
+		<div class="custom-control custom-checkbox">
+			<input class="custom-control-input" type="checkbox" name="respuesta"
+				id="respuesta-2" value="2"><label class="custom-control-label" for="respuesta-2">
+				¿Hoy empezaba a y diez o a y cuarto? </label>
 		</div>
-		<div class="checkbox">
-			<label for="respuesta-3"> <input type="checkbox"
-				name="respuesta" id="respuesta-3" value="3">¿Habrá alguna
-				manera de meter checkboxes en un test de personalidad sin liarla
-				mucho?
-			</label>
+		<div class="custom-control custom-checkbox">
+			<input class="custom-control-input" type="checkbox" name="respuesta"
+				id="respuesta-3" value="3"><label class="custom-control-label" for="respuesta-3">
+				¿Habrá alguna manera de meter checkboxes en un test de personalidad
+				sin liarla mucho? </label>
 		</div>
 	</div>
 
